@@ -13,7 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.poli.registerloginpetsocial.ui.theme.RegisterLoginPetSocialTheme
 
-class MainActivity : ComponentActivity() {
+class MainActivity : LoginActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
