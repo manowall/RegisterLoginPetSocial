@@ -6,52 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/BackgroundGrayPet"
-    tools:context=".LoginActivity">
+    tools:context=".RegisterActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageView1"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/iconomain" />
 
-    <EditText
-        android:id="@+id/userId"
-        android:layout_width="375dp"
-        android:layout_height="60dp"
-        android:hint="Correo Electrónico"
-        android:inputType="text"
-        android:background="@drawable/form_field"
-        android:textColorHint="@android:color/black"
-        android:textColor="@android:color/black"
-        android:textSize="16sp"
-        android:padding="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textLogin" />
-
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="375dp"
-        android:layout_height="60dp"
-        android:hint="Contraseña"
-        android:inputType="textPassword"
-        android:background="@drawable/form_field"
-        android:padding="16dp"
-        android:textColorHint="@android:color/black"
-        android:textColor="@android:color/black"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="423dp"/>
-
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
@@ -62,14 +30,15 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="186dp" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="166dp" />
 
     <TextView
-        android:id="@+id/textLogin"
+        android:id="@+id/textRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
-        android:text="Iniciar Sesión"
+        android:text="Registrate"
         android:textAlignment="center"
         android:textColor="@color/OrangePet"
         android:textSize="40sp"
@@ -77,7 +46,8 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textMain"
+        app:layout_constraintVertical_bias="0.155" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -86,40 +56,91 @@
         android:background="@color/BluePet"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="322dp">
-    </LinearLayout>
+        tools:layout_editor_absoluteY="285dp"></LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="300dp"
-        android:layout_height="3dp"
-        android:background="@color/BluePet"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <EditText
+        android:id="@+id/userName"
+        android:layout_width="375dp"
+        android:layout_height="60dp"
+        android:background="@drawable/form_field"
+        android:hint="Nombre Completo"
+        android:inputType="text"
+        android:padding="16dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/black"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registerLayout"></LinearLayout>
+        tools:layout_editor_absoluteY="295dp"/>
+
+    <EditText
+        android:id="@+id/userEmail"
+        android:layout_width="375dp"
+        android:layout_height="60dp"
+        android:background="@drawable/form_field"
+        android:hint="Correo Electrónico"
+        android:inputType="text"
+        android:padding="16dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="365dp"/>
+
+    <EditText
+        android:id="@+id/userPassword"
+        android:layout_width="375dp"
+        android:layout_height="60dp"
+        android:background="@drawable/form_field"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:padding="16dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="435dp" />
+
+    <EditText
+        android:id="@+id/userConfirmPassword"
+        android:layout_width="375dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/form_field"
+        android:hint="Confirme Contraseña"
+        android:inputType="textPassword"
+        android:padding="16dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/confirmRegisterLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
-        android:id="@+id/loginLayout"
+        android:id="@+id/confirmRegisterLayout"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:background="@drawable/round_button"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/registerLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password">
+        tools:layout_editor_absoluteY="580dp">
 
         <Button
-            android:id="@+id/loginButton"
+            android:id="@+id/registerConfirmButton"
             android:layout_width="265dp"
             android:layout_height="match_parent"
             android:backgroundTint="@android:color/transparent"
-            android:text="Iniciar Sesión"
+            android:text="Registrarse"
             android:textAlignment="center"
             android:textAllCaps="false"
+            android:textColor="@color/white"
             android:textSize="20sp" />
 
         <ImageView
@@ -131,23 +152,24 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/registerLayout"
+        android:id="@+id/buttonLayout"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:background="@drawable/round_button"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="585dp">
+        tools:layout_editor_absoluteY="650dp">
 
         <Button
-            android:id="@+id/registerButton"
+            android:id="@+id/backButton"
             android:layout_width="265dp"
             android:layout_height="match_parent"
             android:backgroundTint="@android:color/transparent"
-            android:text="Registrarse"
+            android:text="Atrás"
             android:textAlignment="center"
             android:textAllCaps="false"
+            android:textColor="@color/white"
             android:textSize="20sp" />
 
         <ImageView
@@ -157,4 +179,6 @@
             app:srcCompat="@drawable/flechalogin" />
 
     </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
