@@ -2,7 +2,10 @@ package com.poli.registerloginpetsocial
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Patterns
 import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -20,6 +23,27 @@ open class LoginActivity : AppCompatActivity() {
         }
 
         val registerButton = findViewById<Button>(R.id.registerButton)
+        val loginButton = findViewById<Button>(R.id.loginButton)
+        val userId = findViewById<EditText>(R.id.userId)
+        val password = findViewById<EditText>(R.id.password)
+
+        loginButton.setOnClickListener {
+            val idValue = userId.text.toString().trim()
+            val passwordValue = password.text.toString().trim()
+
+            if (idValue.isEmpty() || passwordValue.isEmpty()){
+                Toast.makeText(this, "Debe Diligenciar todos los Campos.", Toast.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
+
+            if (!Patterns.EMAIL_ADDRESS.matcher(idValue).matches()){
+                Toast.makeText(this, "El correo ingresado NO es válido.", Toast.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
+
+            Toast.makeText(this, "Inicio de Sesión Exitoso!", Toast.LENGTH_LONG).show()
+        }
+
         registerButton.setOnClickListener {
             val intentRegisterActivity = Intent(this, RegisterActivity::class.java)
             startActivity(intentRegisterActivity)
