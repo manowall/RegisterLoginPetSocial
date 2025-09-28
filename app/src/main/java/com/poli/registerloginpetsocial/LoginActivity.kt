@@ -12,6 +12,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 open class LoginActivity : AppCompatActivity() {
+    private lateinit var baseDatosLocal: BaseDatosAux
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -21,6 +22,7 @@ open class LoginActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        baseDatosLocal = BaseDatosAux(this)
 
         val registerButton = findViewById<Button>(R.id.registerButton)
         val loginButton = findViewById<Button>(R.id.loginButton)
@@ -41,7 +43,12 @@ open class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            Toast.makeText(this, "Inicio de Sesión Exitoso!", Toast.LENGTH_LONG).show()
+            if (baseDatosLocal.buscarUsuario(idValue, passwordValue)){
+                Toast.makeText(this, "Inicio de Sesión Exitoso!", Toast.LENGTH_LONG).show()
+                // Abrir la siguiente activity del menú principal
+            }else{
+                Toast.makeText(this, "Usuario o contraseña incorrectos.", Toast.LENGTH_LONG).show()
+            }
         }
 
         registerButton.setOnClickListener {

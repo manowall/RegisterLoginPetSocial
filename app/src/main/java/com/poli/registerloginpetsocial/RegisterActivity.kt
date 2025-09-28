@@ -12,6 +12,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class RegisterActivity : AppCompatActivity() {
+    private lateinit var baseDatosLocal: BaseDatosAux
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -21,6 +23,7 @@ class RegisterActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        baseDatosLocal = BaseDatosAux(this)
         val backButton = findViewById<Button>(R.id.backButton)
         val registerConfirmButton = findViewById<Button>(R.id.registerConfirmButton)
         val nameUser = findViewById<EditText>(R.id.userName)
@@ -49,7 +52,7 @@ class RegisterActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            Toast.makeText(this, "Registro Exitoso!", Toast.LENGTH_LONG).show()
+            baseDatosLocal.registrarUsuario(nameValue, emailValue, passwordValue, this)
             val successRegisterIntent = Intent(this, LoginActivity::class.java)
             startActivity(successRegisterIntent)
             finish()
