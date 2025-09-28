@@ -7,63 +7,62 @@
     android:layout_height="match_parent"
     android:background="@color/BackgroundGrayPet"
     tools:context=".RegisterActivity">
-
+    <!--ICONO-->
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="32dp"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/iconomain" />
-
+    <!--TITULO PETSOCIAL-->
     <TextView
         android:id="@+id/textMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-medium"
         android:text="PetSocial"
         android:textAlignment="center"
         android:textColor="@color/OrangePet"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView1"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="166dp" />
-
+        app:layout_constraintEnd_toEndOf="parent" />
+    <!--TITULO REGISTRARSE-->
     <TextView
         android:id="@+id/textRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-medium"
-        android:text="Registrate"
+        android:text="Regístrate"
         android:textAlignment="center"
         android:textColor="@color/OrangePet"
         android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textMain"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textMain"
-        app:layout_constraintVertical_bias="0.155" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent" />
+    <!--SEPARADOR-->
+    <View
+        android:id="@+id/lineView"
         android:layout_width="300dp"
         android:layout_height="2dp"
+        android:layout_marginTop="8dp"
         android:background="@color/BluePet"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintTop_toBottomOf="@id/textRegister"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="285dp"></LinearLayout>
-
+        app:layout_constraintEnd_toEndOf="parent" />
+    <!--CAMPO NOMBRE-->
     <EditText
         android:id="@+id/userName"
-        android:layout_width="375dp"
+        android:layout_width="0dp"
         android:layout_height="60dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/form_field"
         android:hint="Nombre Completo"
         android:inputType="text"
@@ -71,29 +70,34 @@
         android:textColor="@android:color/black"
         android:textColorHint="@android:color/black"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lineView"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="295dp"/>
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintWidth_percent="0.9" />
+    <!--CAMPO CORREO-->
     <EditText
         android:id="@+id/userEmail"
-        android:layout_width="375dp"
+        android:layout_width="0dp"
         android:layout_height="60dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/form_field"
         android:hint="Correo Electrónico"
-        android:inputType="text"
+        android:inputType="textEmailAddress"
         android:padding="16dp"
         android:textColor="@android:color/black"
         android:textColorHint="@android:color/black"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userName"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="365dp"/>
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.9" />
+    <!--CAMPO CONTRASEÑA-->
     <EditText
         android:id="@+id/userPassword"
-        android:layout_width="375dp"
+        android:layout_width="0dp"
         android:layout_height="60dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/form_field"
         android:hint="Contraseña"
         android:inputType="textPassword"
@@ -101,15 +105,16 @@
         android:textColor="@android:color/black"
         android:textColorHint="@android:color/black"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userEmail"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="435dp" />
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.9" />
+    <!--CAMPO CONFIRMAR CONTRASEÑA-->
     <EditText
         android:id="@+id/userConfirmPassword"
-        android:layout_width="375dp"
+        android:layout_width="0dp"
         android:layout_height="60dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/form_field"
         android:hint="Confirme Contraseña"
         android:inputType="textPassword"
@@ -117,25 +122,28 @@
         android:textColor="@android:color/black"
         android:textColorHint="@android:color/black"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/confirmRegisterLayout"
+        app:layout_constraintTop_toBottomOf="@id/userPassword"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintWidth_percent="0.9" />
+    <!--LAYOUT REGISTRARSE-->
     <LinearLayout
         android:id="@+id/confirmRegisterLayout"
-        android:layout_width="300dp"
+        android:layout_width="0dp"
         android:layout_height="60dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/round_button"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintTop_toBottomOf="@id/userConfirmPassword"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="580dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.8">
 
         <Button
             android:id="@+id/registerConfirmButton"
-            android:layout_width="265dp"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:backgroundTint="@android:color/transparent"
             android:text="Registrarse"
             android:textAlignment="center"
@@ -148,23 +156,25 @@
             android:layout_width="25dp"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/flechalogin" />
-
     </LinearLayout>
-
+    <!--LAYOUT VOLVER ATRÁS-->
     <LinearLayout
         android:id="@+id/buttonLayout"
-        android:layout_width="300dp"
+        android:layout_width="0dp"
         android:layout_height="60dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/round_button"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/confirmRegisterLayout"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="650dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.8">
 
         <Button
             android:id="@+id/backButton"
-            android:layout_width="265dp"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:backgroundTint="@android:color/transparent"
             android:text="Atrás"
             android:textAlignment="center"
@@ -177,8 +187,6 @@
             android:layout_width="25dp"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/flechalogin" />
-
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
